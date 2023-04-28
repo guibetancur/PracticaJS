@@ -6,4 +6,5 @@ const d = document
 d.addEventListener("DOMContentLoaded", (e) => {
     hamburgerMenu('.panel-btn', '.panel', '.menu a')
     digitalClock('#reloj','#btnReloj')
+    alarm('./assets/alarma_despertador_relax.mp3', '#btnAlarma')
 })

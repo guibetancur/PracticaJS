@@ -1,8 +1,10 @@
 const d = document
-const boton = d.querySelector('#btnReloj')
+const botonReloj = d.querySelector('#btnReloj')
 const relojText = d.querySelector('#reloj')
-let switche = false
-let activado
+const botonAlarma = d.querySelector('#btnAlarma')
+let switcheReloj = false, switcheAlarm = false
+let activado, alarmTempo
+const $alarm = d.createElement("audio")
 
 function timer(clock) {
   let clockRT = new Date().toLocaleTimeString()
@@ -14,47 +16,36 @@ function timer(clock) {
 export function digitalClock(clock, btn) {
   d.addEventListener('click', e => {
     if (e.target.matches(btn)) {
-      switche = !switche
-      boton.innerHTML = switche ? 'Desactivar Reloj' : 'Activar Reloj'
-      debugger
-      if (switche) {
+      switcheReloj = !switcheReloj
+      botonReloj.innerHTML = switcheReloj ? 'Desactivar Reloj' : 'Activar Reloj'
+      if (switcheReloj) {
         activado = setInterval(timer, 1000)
       }
       else {
         clearInterval(activado)
-        // d.querySelector(clock).innerHTML = ''
+        // d.querySelector(clock).innerHTML = '' // o podría ser...
+        relojText.innerHTML = ''
       }
     }
   })
 }
 
-export function alarm() {
-
+export function alarm(sound, btn) {
+  $alarm.src = sound
+  d.addEventListener('click', e => {
+    console.log(e.target, btn)
+    if (e.target.matches(btn)) {
+      switcheAlarm = !switcheAlarm
+      botonAlarma.innerHTML = switcheAlarm ? 'Desactivar Alarma' : 'Activar Alarma'
+      if (switcheAlarm) {
+        alarmTempo = setTimeout(() => {
+          $alarm.play()
+        })
+      } else {
+        clearTimeout(alarmTempo)
+        $alarm.pause()
+        $alarm.currentTime = 0
+      }
+    }
+  })
 }
-
-/*
-const reloj = d.querySelector('.reloj')
-reloj.addEventListener('click', e => {
-  let interval = setInterval(clock, 1000)
-  reloj.innerHTML = reloj.innerHTML === 'Desactivar Reloj' ? 'Activar Reloj' : 'Desactivar Reloj'
-})
-
-const alarma = d.querySelector('.alarma')
-alarma.addEventListener('click', e => {
-  alarma.innerHTML = alarma.innerHTML === 'Desactivar Alarma' ? 'Activar Alarma' : 'Desactivar Alarma'
-})
-
-function clock() {
-  const hora = document.getElementById('hora')
-  const minuto = document.getElementById('minuto')
-  const segundo = document.getElementById('segundo')
-  let h = new Date().getHours()
-  let m = new Date().getMinutes()
-  let s = new Date().getSeconds()
-  hora.innerHTML = h + ' :'
-  minuto.innerHTML = m + ' :'
-  segundo.innerHTML = s
-}
-
-}
-*/

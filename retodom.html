@@ -23,7 +23,7 @@
 	<aside class="panel">
 		<nav class="menu">
 			<!-- a[href="#seccion$"]*5{Sección $} -->
-			<a href="#seccion1">Reloj Digital y alarma sonora</a>
+			<a href="#seccion1">Reloj Digital y Alarma Sonora</a>
 			<a href="#seccion2">Sección 2</a>
 			<a href="#seccion3">Sección 3</a>
 			<a href="#seccion4">Sección 4</a>
@@ -33,9 +33,14 @@
 	<main>
 		<!-- section#seccion$.section*5>h2{Sección $} -->
 		<section id="seccion1" class="section">
-			<h2>Sección 1</h2>
+			<h2>Reloj Digital y Alarma Sonora</h2>
 			<button id="btnReloj">Activar Reloj</button>
-			<button class="alarma">Activar Alarma</button>
+			<button id="btnAlarma">Activar Alarma</button>
+			<br>
+			<audio src="./assets/alarma_despertador_relax.mp3" controls></audio>
+			<!-- <audio src="./assets/alarma_despertador_relax.mp3" controls autoplay>
+				El navegador no soporta el elemento <code>audio</code>.
+			</audio> -->
 			<br>
 			<span id="reloj"></span>
 		</section>
@@ -52,7 +57,6 @@
 			<h2>Sección 5</h2>
 		</section>
 	</main>
-	<!-- <script src="./retodom.js" type="module"></script> -->
 	<script src="./retodom.js" type="module"></script>
 </body>
 
