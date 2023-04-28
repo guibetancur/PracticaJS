@@ -1,5 +1,5 @@
 import hamburgerMenu from "./index_retodom.js";
-import { digitalClock, alarm } from "../section1.js";
+import { digitalClock, alarm } from "./section1.js";
 
 const d = document
 
