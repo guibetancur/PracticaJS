@@ -148,3 +148,61 @@ img {
     border-radius: 50%;
     background-color: var(--main-color);
 }
+
+/* Scroll top buttom*/
+.scroll-top-btn {
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    /* Al lado izquierdo de la hamburguesa 4.25rem es el tamaño del botón */
+    right: calc(4.25rem + 1vw);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*Tema oscuro*/
+.btnTema {
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    /* Al lado izquierdo de la hamburguesa 4.25rem es el tamaño del botón */
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+.btnTema:hover {
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.modo {
+    background-color: var(--second-color);
+    color: var(--main-color);
+}

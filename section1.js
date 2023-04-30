@@ -33,7 +33,6 @@ export function digitalClock(clock, btn) {
 export function alarm(sound, btn) {
   $alarm.src = sound
   d.addEventListener('click', e => {
-    console.log(e.target, btn)
     if (e.target.matches(btn)) {
       switcheAlarm = !switcheAlarm
       botonAlarma.innerHTML = switcheAlarm ? 'Desactivar Alarma' : 'Activar Alarma'
