@@ -2,10 +2,14 @@
 :root {
     --main-font: sans-serif;
     --font-size: 16px;
-    --main-color: #f7df1e;
+    --main-color: #390202;
+    --second-color: #bcb9b9;
+    --main-modal-color: rgba(30, 106, 247, 0.85);
+    --second-modal-color: rgba(34,34,34,0.85);
+    /* --main-color: #f7df1e;
     --second-color: #222;
     --main-modal-color: rgba(247,222,30,0.85);
-    --second-modal-color: rgba(34,34,34,0.85);
+    --second-modal-color: rgba(34,34,34,0.85); */
     --container-width: 1200px;
     /* para generar containers con el máximo */
 }
