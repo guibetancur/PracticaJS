@@ -7,6 +7,9 @@ import tema from "./temas.js";
 import responsiveMedia from "./responsive.js";
 import responsiveTester from "./responsive_tester.js";
 import detectDevice from "./detect_device.js";
+import networkStatus from "./network_detect.js";
+import webCam from "./webcam.js";
+import getGeolocation from "./geolocalizacion.js";
 
 const d = document
 
@@ -21,6 +24,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
     responsiveMedia('gmaps','(min-width: 1024px)',`<a href='https://www.google.com/maps/@6.2649263,-75.5776751,14.5z' target='_blank' rel='noopener'>Ver mapa</<a>`,`<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31727.927191164243!2d-75.5776751!3d6.2649263!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44291049b3e057%3A0xe2496319a7e30efa!2sTiendas%20D1%20El%20Diamante!5e0!3m2!1ses-419!2sco!4v1683075788103!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`)
     responsiveTester('responsiveTester')
     detectDevice('user-device')
+    webCam('webcam')
+    getGeolocation('geoLocation')
 })
 
 d.addEventListener('keydown', e => {
@@ -29,4 +34,5 @@ d.addEventListener('keydown', e => {
 })
 
 tema('.btnTema','modo')
+networkStatus()
 
