@@ -2,14 +2,10 @@
 :root {
 	--main-font: sans-serif;
 	--font-size: 16px;
-	--main-color: #390202;
-	--second-color: #bcb9b9;
-	--main-modal-color: rgba(30, 106, 247, 0.85);
-	--second-modal-color: rgba(34, 34, 34, 0.85);
-	/* --main-color: #f7df1e;
+	--main-color: #f7df1e;
     --second-color: #222;
     --main-modal-color: rgba(247,222,30,0.85);
-    --second-modal-color: rgba(34,34,34,0.85); */
+    --second-modal-color: rgba(34,34,34,0.85);
 	--container-width: 1200px;
 	/* para generar containers con el máximo */
 }
@@ -229,4 +225,37 @@ img {
 
 .offline {
 	background-color: #b71c1c;
+}
+
+/* Filtros de búsqueda*/
+
+.cards {
+	display: grid;
+	/* Hace las veces de la media query porque se ajusta con minmax entre 250px y una fracción  */
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+	background-color: var(--second-color);
+	color: var(--main-color);
+	transition: all 0.3s ease-out;
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+}
+
+.card figcaption {
+	padding: 1rem;
+}
+
+.filter {
+	/* Clase para que no se muestren algunas tarjetas */
+	/* display: none; */
+	/* Para que no cambien de tamaño*/
+	visibility: hidden;
+	opacity: 0;
+	/* Para que se ordenen desde la posición inicial*/
+	order: 1;
 }

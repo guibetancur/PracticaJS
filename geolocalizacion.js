@@ -6,7 +6,7 @@ export default function getGeolocation(id) {
       options = {
          enableHighAccuracy: true, // La mejor lectura posible
          timeout: 5000, // Esperar la respuesta
-         maximumAge: 0 // Evitar que no se guarde cache 
+         maximumAge: 0 // Evitar que se guarde cache 
       }
 
    const success = position => {

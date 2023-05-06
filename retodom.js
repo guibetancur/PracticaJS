@@ -10,6 +10,8 @@ import detectDevice from "./detect_device.js";
 import networkStatus from "./network_detect.js";
 import webCam from "./webcam.js";
 import getGeolocation from "./geolocalizacion.js";
+import filtro from "./filtro.js";
+import sorteo from "./sorteo.js";
 
 const d = document
 
@@ -26,6 +28,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
     detectDevice('user-device')
     webCam('webcam')
     getGeolocation('geoLocation')
+    filtro('.card-filter','.card')
+    sorteo('#winner-btn','.player')
 })
 
 d.addEventListener('keydown', e => {
