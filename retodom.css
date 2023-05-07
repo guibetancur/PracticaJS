@@ -40,6 +40,7 @@ img {
 
 .header {
 	position: sticky;
+	z-index: 997;
 	top: 0;
 	padding: 1rem;
 	background-color: var(--main-color);
@@ -75,25 +76,25 @@ img {
 	/* Para que permita hacer scroll vertical */
 	overflow-y: auto;
 	background-color: var(--second-modal-color);
-	transition: transform 0.3s ease;
+	/* En caso de usar visibility en lugar de transition; */
+	opacity: 0;
+    visibility: hidden;
+	transition: transform 0.3s ease, opacity 0.5s ease;
 	/* Para que aparezca desde arriba*/
-	transform: translate(0, -100%);
+	/* transform: translate(0, -100%); */
 	/* De abajo*/
-	transform: translate(0, 100%);
+	/* transform: translate(0, 100%); */
 	/* De la derecha*/
-	transform: translate(100%, 0);
+	/* transform: translate(100%, 0); */
 	/* De la izquierda*/
 	transform: translate(-100, 0);
-	/* En caso de usar visibility en lugar de transition; */
-	/* opacity: 0;
-    visibility: hidden; */
 }
 
 .panel.is-active {
 	transform: translate(0, 0);
 	/* en caso de usar opacity en lugar de transform... */
-	/* opacity: 1;
-    visibility: visible; */
+	opacity: 1;
+    visibility: visible;
 }
 
 .panel-btn {
@@ -258,4 +259,131 @@ img {
 	opacity: 0;
 	/* Para que se ordenen desde la posición inicial*/
 	order: 1;
+}
+
+/* Responsive Slider*/
+
+.slider {
+	position: relative;
+	width: 80%;
+	margin: 1rem auto;
+	text-align: center;
+}
+
+.slider-slides {
+	position: relative;
+	height: 400px;
+}
+
+.slider-slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1s ease;
+}
+
+.slider-slide img {
+	height: inherit;
+	width: inherit;
+	/* Para ajustar la imagen a su tamaño */
+	object-fit: cover;
+	object-position: 50% 0%;
+}
+
+.slider-slide.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.slider-btns {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.slider a {
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	border: thin solid #000;
+	text-decoration: none;
+	background-color: #fff;
+	color: #000;
+	transition: all 0.3s ease;
+}
+
+.slider a:hover {
+	color: #4d4d4d;
+}
+
+/* Scroll Spy*/
+
+@media screen and (min-width: 1024px) {
+	/* Visible solo cuando la pantalla sea superior a 1024px */
+	body {
+		display: grid;
+		grid-template-columns: 80% 20%;
+		grid-template-rows: 4rem auto;
+		grid-template-areas: 
+			'header header'
+			'main   panel';
+	}
+
+	main {
+		grid-area: main;
+	}
+
+	.header {
+		grid-area: header;
+	}
+
+	.panel {
+		grid-area: panel;
+		align-self: start;
+		position: sticky;
+		top: 4rem;
+		justify-content: flex-start;
+		background-color: var(--second-color);
+		transform: translate(0,0);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.panel-btn {
+		display: none;
+	}
+
+	.menu {
+		justify-content: start;
+		text-align: right;
+	}
+
+	.menu a {
+		font-size: 1rem;
+		padding: 0.75rem;
+	}
+
+	.menu a:hover,
+	.menu a.active {
+		color: var(--second-color);
+		background-color: var(--main-color);
+	}
+
+	.scroll-top-btn {
+		right: initial;
+		left: calc(4.25rem + 1vw);
+	}
+
+	.section {
+		border: thin solid red;
+	}
 }
