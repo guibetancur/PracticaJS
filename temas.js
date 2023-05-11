@@ -25,6 +25,7 @@ export default function tema(boton, tema) {
       if ($temaBtn.textContent === moon) { darkMode() } else lightMode()
     }
   })
+
   d.addEventListener('DOMContentLoaded', e => {
     if (localStorage.getItem('tema') === null) localStorage.setItem('tema', 'light')
     if (localStorage.getItem('tema') === 'light') lightMode()

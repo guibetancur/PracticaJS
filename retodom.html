@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- data atribute para activar el tema oscuro/claro igual que en el body, podría usarse en el header -->
 <html lang="es" data-modo>
-
+<!-- david20egt@hotmail.com -->
+<!-- Gadielito01* -->
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,9 +37,9 @@
 			<a href="#seccion10" data-scroll-spy>Filtros de Búsqueda</a>
 			<a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
 			<a href="#seccion12" data-scroll-spy>Responsive Slider</a>
-			<a href="#seccion13" data-scroll-spy>Sección 13</a>
-			<a href="#seccion14" data-scroll-spy>Sección 14</a>
-			<a href="#seccion15" data-scroll-spy>Sección 15</a>
+			<a href="#seccion13" data-scroll-spy>Video Inteligente</a>
+			<a href="#seccion14" data-scroll-spy>Validaciones de Formulario</a>
+			<a href="#seccion15" data-scroll-spy>Narrador (Lector de Voz)</a>
 		</nav>
 	</aside>
 	<main>
@@ -203,13 +204,45 @@
 
 		</section>
 		<section id="seccion13" class="section" data-scroll-spy>
-			<h2>Sección 13</h2>
+			<h2>Video Inteligente</h2>
+      <video src="./assets/Torpes con Celular.mp4" muted controls loop data-smart-video></video>
+      <br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br>
+      <video src="./assets/Gatear.mp4" muted controls loop data-smart-video></video>
+      <br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br>
+      <video src="./assets/Gatito tierno.mp4" muted controls loop data-smart-video></video>
+      <br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br>
+      <video src="./assets/Regañoperrito.mp4" muted controls loop data-smart-video></video>
 		</section>
 		<section id="seccion14" class="section" data-scroll-spy>
-			<h2>Sección 14</h2>
+			<h2>Validaciones de Formulario</h2>
+      <form target="_blank" action="https://formsubmit.co/guibetancur@hotmail.com" class="contact-form" method="POST">
+        <legend>Envíanos tus comentarios</legend>
+        <!-- Usamos propiedades nuevas como pattern y title que validan el campo  -->
+        <input type="text" name="name" placeholder="Escribe tu nombre" title="Solo letras y espacios" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <input type="email" name="email" placeholder="Escribe tu email" title="Email no válido" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+        <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios" data-pattern="^.{1,255}$" title="No debe exceder los 255 caracteres" required></textarea>
+        <input type="submit" value="Enviar">
+        <div class="contact-form-loader none">
+          <img src="./assets/ball-triangle.svg" alt="Cargando..." srcset="">
+        </div>
+        <div class="contact-form-response none">
+          <p>Los datos han sido enviados</p>
+        </div>
+      </form>
 		</section>
 		<section id="seccion15" class="section" data-scroll-spy>
-			<h2>Sección 15</h2>
+			<h2>Narrador (Lector de Voz)</h2>
+      <select id="speech-select">
+        <option value="">--- Elige una Voz ---</option>
+      </select>
+      <br><br>
+      <textarea id="speech-text" cols="50" rows="10" placeholder="Ingresa texto para leerlo..."></textarea>
+      <br><br>
+      <button id="speech-btn">Leer Texto</button>
 		</section>
 	</main>
 	<button class="scroll-top-btn hidden">&#11014;</button>
@@ -218,3 +251,6 @@
 </body>
 
 </html>
+<!-- Para descargar videos cortos desde internet libres de derechos de autor https://coverr.co
+descargar loaders SVG desde samherbert.net/svg-loaders 
+ -->

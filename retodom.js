@@ -14,6 +14,9 @@ import filtro from "./filtro.js";
 import sorteo from "./sorteo.js";
 import slider from "./carrusel.js";
 import scrollSpy from "./scroll_spy.js";
+import smartVideo from "./video_inteligente.js";
+import formValidation from "./validaciones_formulario.js";
+import narrador from "./narrador.js";
 
 const d = document
 
@@ -21,7 +24,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     hamburgerMenu('.panel-btn', '.panel', '.menu a')
     digitalClock('#reloj','#btnReloj')
     alarm('./assets/alarma_despertador_relax.mp3', '#btnAlarma')
-    countdown('Jul 17, 2023 00:00:00','Felicitaciones')
+    countdown('Jul 17, 2023 00:00:00','Feliz Cumpleaños para Dinora')
     // countdown('Apr 28, 2023 22:00:00','El plazo se ha cumplido... Felicitaciones')
     botonHome('.scroll-top-btn')
     responsiveMedia('youtube','(min-width: 1024px)',`<a href='https://youtu.be/JSwu8PL-Z7s' target='_blank' rel='noopener'>Ver video</<a>`,`<iframe width="560" height="315" src="https://www.youtube.com/embed/JSwu8PL-Z7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`)
@@ -34,6 +37,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
     sorteo('#winner-btn','.player')
     slider()
     scrollSpy()
+    smartVideo()
+    formValidation()
 })
 
 d.addEventListener('keydown', e => {
@@ -41,6 +46,8 @@ d.addEventListener('keydown', e => {
     moveBall(e,'.ball','.stage')
 })
 
+// Estos se colocan afuera porque utilizan internamente el DomContentLoader
 tema('.btnTema','modo')
 networkStatus()
+narrador()
 
