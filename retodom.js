@@ -39,6 +39,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     scrollSpy()
     smartVideo()
     formValidation()
+    narrador() // Se llama acá porque narrador.js no usa el DOMContentLoaded, sino, se pondría al final
 })
 
 d.addEventListener('keydown', e => {
@@ -49,5 +50,4 @@ d.addEventListener('keydown', e => {
 // Estos se colocan afuera porque utilizan internamente el DomContentLoader
 tema('.btnTema','modo')
 networkStatus()
-narrador()
 

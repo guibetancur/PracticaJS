@@ -1,0 +1,41 @@
+Tres métodos nativos para AJAX
+1-ActiveXObject (IE8 e inferiores)
+2-XMLHTTPRequest
+3-API Fetch
+
+Librerías Externas
+1- JQuery
+2- Axios - Basada en promesas 
+3- etc
+
+Ajax no es una tecnología en sí mismo. E realidad, se trata de varias tecnologías independientes que se unen:
+
+- Html y CSS
+- DOM 
+- HTML, XML y JSON para intercambio y manipulación de datos
+- JavaScript para unir todas las tecnologías
+
+Estado de la petición:
+  - READY_STATE_UNINITIALIZED = 0
+  - READY_STATE_LOADING = 1
+  - READY_STATE_LOADED = 2
+  - READY_STATE_INTERACTIVE = 3
+  - READY_STATE_COMPLETE = 4
+
+  Códigos de estado de respuesta:
+  1. Respuestas informativas (100-199)
+  2. Respuestas satisfactorias (200-299)
+  3. Redirecciones (300-399)
+  4. Errores de los clientes (400-499)
+  5. Errores de los servidores (500-599)
+
+Respuestas satisfactorias
+- GET: El recurso se ha obtenido y se transmite en el cuerpo del mensaje
+- HEAD: Los encabezados de entidad están en el cuerpo del mensaje
+- PUT o POST: El recurso que describe el resultado de la acción se transmite en el cuerpo del mensaje
+- TRACE: El cuerpo del mensaje contiene el mensaje de solicitud recibido por el servidores
+200 - OK, 201 - Created, 202 - Accepted...  
+
+api.github.com/users/guibetancur
+
+https://jsonplaceholder.typicode.com/ Api falsa para hacer pruebas en prototipos
